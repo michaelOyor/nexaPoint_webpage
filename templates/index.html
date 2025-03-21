@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexaPoint Webpage</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* General Section Styling */
+        .section {
+            padding: 60px 0;
+            display: flex;
+            justify-content: center; /* Horizontally center content */
+            align-items: center;     /* Vertically center content */
+            text-align: center;      /* Ensures text content is centered */
+        }
+
+        /* Landing Section (Full Width, Background Image) */
+        .landing {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: url('{{ url_for("static", filename="Landing_background.jpg") }}');
+            background-size: cover;
+            background-position: center;
+            width: 100%; /* Ensure full width */
+        }
+
+        /* About Section (Dark Grey Background) */
+        .about-section {
+            background-color: #333; /* Dark Grey */
+            color: white;           /* Text color to contrast with dark background */
+            width: 100%;            /* Full width */
+            padding: 60px 0;        /* Padding for spacing */
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            align-items: center;     /* Center vertically */
+        }
+
+        /* Card Section (Dark Blue Background) */
+        .card-section {
+            height:100%;
+            background-color: #1c2841; /* Dark Blue */
+            color: black;               /* Text color to contrast with dark background */
+            width: 100%;                /* Full width */
+            padding-top:20px;
+            padding: 60px 0;            /* Padding for spacing */
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            align-items: center;     /* Center vertically */
+        }
+
+        /* Flexbox Layout for the Cards */
+        .cards .card {
+            margin: 10px;  /* Add spacing between cards */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        @media (min-width: 576px) {
+            .cards .card {
+                width: 23%; /* Adjust the width of the cards to take up 25% minus margin */
+            }
+        }
+
+        .img-flex {
+            display: flex;
+            align-items: center;
+        }
+
+        .img-flex img {
+            max-width: 50%;
+            margin-left: 30px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#landing">
+                <img src="{{ url_for('static', filename='Coloured PNG.png') }}" alt="NexaPoint Logo" style="height:30px; width:auto;" class="d-inline-block align-top">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#landing">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#section1">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#section2">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#section3">Pricing</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Landing Section -->
+    <div id="landing" class="section landing text-center">
+        <div class="container">
+            <h1 class="display-3 text-white">Welcome to NexaPoint</h1>
+            <p class="text-white">Your partner in tech solutions</p>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div id="section1" class="about-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>About NexaPoint</h2>
+                    <p>NexaPoint is your trusted partner in tech solutions, offering innovative services to help your business thrive. Our expertise spans across multiple domains including web development, cloud services, and IT consulting.</p>
+                </div>
+                <div class="col-md-6">
+                    <img src="{{ url_for('static', filename='Coloured PNG.png') }}" alt="About NexaPoint" style="padding-left:100px; height:120px; width:auto class="img-fluid>">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Card Section -->
+    <div id="section2" class="card-section">
+        <div class="container">
+            <h2 class="text-center" style="color: #FFFFFF; font-size: 24px; font-weight: bold;" >Our Services</h2>
+            <div class="row cards">
+                <!-- Card 1 -->
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="card h-100" style="width: 100%">
+                        <img src="{{ url_for('static', filename='web_design.jpg') }}" class="card-img-top" alt="Service 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Web Development</h5>
+                            <p class="card-text">Web development and portfolio creation</p>
+                            <p class="card-price">$500</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="card h-100" style="width: 100%">
+                        <img src="{{ url_for('static', filename='cloud services.jpg') }}" class="card-img-top" alt="Service 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Cloud Solutions</h5>
+                            <p class="card-text">Creating and managing Infrastructure Platform for best performance</p>
+                            <p class="card-price">$1000</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="card h-100" style="width: 100%">
+                        <img src="{{ url_for('static', filename='IT_consulting.jpg') }}" class="card-img-top" alt="Service 3">
+                        <div class="card-body">
+                            <h5 class="card-title">IT Consulting</h5>
+                            <p class="card-text">One stop solution Managed service provider. Our services span across cyber security and infrastructure</p>
+                            <p class="card-price">$1500</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="col-md-3 col-sm-6 mb-4">
+                    <div class="card h-100" style="width: 100%">
+                        <img src="{{ url_for('static', filename='Education.jpg') }}" class="card-img-top" alt="Service 4">
+                        <div class="card-body">
+                            <h5 class="card-title">Education</h5>
+                            <p class="card-text">Professional Trainings and development</p>
+                            <p class="card-price">$1200</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pricing Section -->
+    <div id="section3" class="section bg-light">
+        <div class="container text-center">
+            <h2>Pricing Plans</h2>
+            <p>Choose the right plan for your business needs.</p>
+            <div class="row">
+                <div class="col-md-4">
+                    <h4>Basic Plan</h4>
+                    <p>$199/month</p>
+                    <p>Includes basic services and support.</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Standard Plan</h4>
+                    <p>$499/month</p>
+                    <p>Includes web development and support.</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Premium Plan</h4>
+                    <p>$999/month</p>
+                    <p>Includes full package of all services.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
