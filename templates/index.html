@@ -104,6 +104,12 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#section3">Pricing</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('users') }}">Users</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('register') }}">Register</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -126,7 +132,7 @@
                     <p>NexaPoint is your trusted partner in tech solutions, offering innovative services to help your business thrive. Our expertise spans across multiple domains including web development, cloud services, and IT consulting.</p>
                 </div>
                 <div class="col-md-6">
-                    <img src="{{ url_for('static', filename='Coloured PNG.png') }}" alt="About NexaPoint" style="padding-left:100px; height:120px; width:auto class="img-fluid>">
+                    <img src="{{ url_for('static', filename='Coloured PNG.png') }}" alt="About NexaPoint" style="padding-left:100px; height:120px; width:auto" class="img-fluid">
                 </div>
             </div>
         </div>
