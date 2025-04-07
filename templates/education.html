@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Education</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
+    <style>
+        body{
+        background: url("/static/blue_bg.jpg") no-repeat center center fixed;
+        background-size:cover;
+        }
+
+
+        .course-card {
+         margin-top:50px;
+            background: url("{{ url_for('static', filename='Gradient3.jpg') }}") no-repeat center center;
+            background-size: cover;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            position: relative;
+        }
+
+            .card{
+            margin-top:50px;
+            }
+        .course-card-content {
+
+            position: relative;
+            z-index: 2;
+        }
+
+       #section4{
+       margin-top:50px;
+       padding-top:30px;
+       }
+    </style>
+</head>
+<body class="bg-light">
+
+  <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container-fluid" >
+                <a class="navbar-brand" href="/">
+                <img src="{{ url_for('static', filename='LargeRes.png') }}" alt="NexaPoint Logo" style="height:30px; width:auto;" class="d-inline-block align-top">
+            </a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/register">Register</a>
+                    </li>
+                      <li class="nav-item active">
+                        <a class="nav-link" href="/login">Login</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<div class="container mt-5" >
+    <div class="row">
+        <!-- Left Section: (It support) Course Details -->
+        <div class="col-md-8">
+            <div class="course-card card p-4 shadow ">
+                <div class="course-card-content " >
+                <h4 class="text-primary" >IT Support & Service Management</h4>
+                <p class="text-success fw-bold">★★★★★ 50 reviews on <a href="#">Trustpilot</a></p>
+
+                <div class="d-flex align-items-center">
+                    <img src="{{ url_for('static', filename='michael.jpg') }}" class="rounded-circle me-2" style="width: 40px; height: 40px; object-fit:cover;">
+                    <p class="mb-0 text-black" ><strong>Michael Oyor</strong><br>Technical Director, NexaPoint</p>
+                </div>
+
+            </div>
+                 <div class="col-md-6">
+            <ul class="list-unstyled text-dark">
+                <li><i class="text-success bi bi-check-circle-fill"></i> Introduction to shell scripting for automation</li>
+                <li><i class="text-success bi bi-check-circle-fill"></i> Understanding shell types and features</li>
+                <li><i class="text-success bi bi-check-circle-fill"></i> Familiarization with basic shell commands and operators</li>
+                <li><i class="text-success bi bi-check-circle-fill"></i> Control structures, loops, and conditionals in shell scripts</li>
+            </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Right Section: Subscription -->
+        <div class="col-md-4">
+            <div class="card p-4 shadow" >
+                <p class="mt-3"><strong>Get access to the Nexapoint IT support Program .</strong></p>
+                <p>You’ll get access to 100+ hrs of courses , 10+ hrs of hands on lab, and 1-1 with out engineers.</p>
+                <a href="#" class="btn btn-primary w-100">Register Now</a>
+                <p class="text-center mt-2">Already Registered? <a href="#">Log in</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container mt-5">
+    <div class="row">
+        <!-- Left Section: (Data Analytics) Course Details -->
+        <div class="col-md-8">
+            <div class="course-card p-4 shadow">
+                <h4 class="text-primary">Data Analysis with Excel, SQL, and Power BI</h4>
+                <p class="text-success fw-bold">★★★★★ 25 reviews on <a href="#">Trustpilot</a></p>
+
+                <div class="d-flex align-items-center">
+                    <img src="{{ url_for('static', filename='Tosin.jpg') }}" class="rounded-circle me-2" style="width: 40px; height: 40px; object-fit:cover;">
+                    <p class="mb-0 text-black"><strong>Tosin Morebise</strong><br>Associate Director, Nexapoint</p>
+                </div>
+
+                  <div class="col-md-6">
+            <ul class="list-unstyled text-dark">
+                <li><i class="text-success bi bi-check-circle-fill"></i> Introduction to shell scripting for automation</li>
+                <li><i class="text-success bi bi-check-circle-fill"></i> Understanding shell types and features</li>
+                <li><i class="text-success bi bi-check-circle-fill"></i> Familiarization with basic shell commands and operators</li>
+                <li><i class="text-success bi bi-check-circle-fill"></i> Control structures, loops, and conditionals in shell scripts</li>
+            </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Right Section: Subscription -->
+        <div class="col-md-4">
+            <div class="card p-4 shadow">
+                <p class="mt-3"><strong>Get access to Nexapoint Data analytics Program.</strong></p>
+                <p>You’ll get access to 100+ hrs of courses , 10+ hrs of hands on lab, and 1-1 with out engineers..</p>
+                <a href="#" class="btn btn-primary w-100">Register Now</a>
+                <p class="text-center mt-2">Already Registered? <a href="#">Log in</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <div class="row">
+        <!-- Left Section: (Graphics Designs) Course Details -->
+        <div class="col-md-8">
+            <div class="course-card p-4 shadow">
+                <h4 class="text-primary">Graphics Design</h4>
+                <p class="text-success fw-bold">★★★★★ 51 reviews on <a href="#">Trustpilot</a></p>
+
+                <div class="d-flex align-items-center">
+                    <img src="{{ url_for('static', filename='Simeon.jpg') }}" class="rounded-circle me-2" style="width:40px; height:40px; object-fit:cover;">
+                    <p class="mb-0 text-black"><strong>Simeon sodeinde</strong><br>Media Director, Nexapoint</p>
+                </div>
+
+                  <div class="col-md-6">
+            <ul class="list-unstyled text-dark">
+                <li><i class="text-success bi bi-check-circle-fill"></i> Introduction to shell scripting for automation</li>
+                <li><i class="text-success bi bi-check-circle-fill"></i> Understanding shell types and features</li>
+                <li><i class="text-success bi bi-check-circle-fill"></i> Familiarization with basic shell commands and operators</li>
+                <li><i class="text-success bi bi-check-circle-fill"></i> Control structures, loops, and conditionals in shell scripts</li>
+            </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Right Section: Subscription -->
+        <div class="col-md-4">
+            <div class="card p-4 shadow">
+                <p class="mt-3"><strong>Get access to all NexaPoints courses.</strong></p>
+                <p>You’ll get access to 100+ hrs of courses , 10+ hrs of hands on lab, and 1-1 with out engineers.</p>
+                <a href="#" class="btn btn-primary w-100">Register Now</a>
+                <p class="text-center mt-2">Already Registered? <a href="#">Log in</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container mt-5">
+    <div class="row">
+        <!-- Left Section: (Project Management) Course Details -->
+        <div class="col-md-8">
+            <div class="course-card p-4 shadow">
+                <h4 class="text-primary">Project management and business analytics</h4>
+                <p class="text-success fw-bold">★★★★★ 70 reviews on <a href="#">Trustpilot</a></p>
+
+                <div class="d-flex align-items-center">
+                    <img src="{{ url_for('static', filename='pmTutor.jpg') }}" class="rounded-circle me-2" width="40" height="40">
+                    <p class="mb-0 text-black" ><strong>Patience Eze</strong><br>Tutor, Nexapoint</p>
+                </div>
+
+                 <div class="d-flex align-items-center">
+                    <img src="{{ url_for('static', filename='lydia.jpg') }}" class="rounded-circle me-2" style="width: 40px; height: 40px; object-fit:cover;">
+                    <p class="mb-0 text-black" ><strong>Lydia Mbagwu</strong><br>Tutor, Nexapoint</p>
+                </div>
+
+                  <div class="col-md-6">
+            <ul class="list-unstyled text-dark">
+                <li><i class="text-success bi bi-check-circle-fill"></i> Introduction to shell scripting for automation</li>
+                <li><i class="text-success bi bi-check-circle-fill"></i> Understanding shell types and features</li>
+                <li><i class="text-success bi bi-check-circle-fill"></i> Familiarization with basic shell commands and operators</li>
+                <li><i class="text-success bi bi-check-circle-fill"></i> Control structures, loops, and conditionals in shell scripts</li>
+            </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Right Section: Subscription -->
+        <div class="col-md-4">
+            <div class="card p-4 shadow">
+                <p class="mt-3"><strong>Get access to all Nexapoints courses.</strong></p>
+                <p>You’ll get access to 100+ hrs of courses , 10+ hrs of hands on lab, and 1-1 with out engineers.</p>
+                <a href="#" class="btn btn-primary w-100">Register Now</a>
+                <p class="text-center mt-2">Already Registered? <a href="#">Log in</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Contact Section -->
+    <div id="section4" class="section bg-white text-black">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-md-3">
+                    <h4>&copy;nexapoint Team</h4>
+                    <p>Innovating IT solutions, empowering professionals, and securing businesses with expert consultancy and training.</p>
+                    <h7>Developed by <a href="https://www.instagram.com/oyor_michael/" target="_blank" rel="noopener noreferrer">Oyor_michael</a></h7>
+                </div>
+                <div class="col-md-3">
+                    <h4>Office address</h4>
+                    <p>71-75 Sheldon Street, Covent Garden, London, United Kingdom</p>
+                </div>
+                <div class="col-md-3">
+                    <h4>Contact us</h4>
+                    <p>info@nexapoint.com <br> +44 (0)7459 158430</p>
+                </div>
+                <div class="col-md-3">
+                    <h4>follow us</h4>
+                     <img src="{{ url_for('static', filename='facebook.png') }}">
+                       <img src="{{ url_for('static', filename='instagram.png') }}">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
