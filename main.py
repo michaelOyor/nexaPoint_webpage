@@ -28,6 +28,8 @@ class User(UserMixin, db.Model):
     username = db.Column(db.String(30), nullable=False, unique=True)
     email = db.Column(db.String(120), nullable=False, unique=True)
     password = db.Column(db.String(80), nullable=False)
+    course = db.Column(db.String(50), nullable=True)
+    phone = db.Column(db.String(13), nullable=True)
 
 
 # User Loader function for login manager
@@ -40,6 +42,7 @@ class RegisterForm(FlaskForm):
     username = StringField(validators=[InputRequired(), Length(min=4, max=30)], render_kw={"placeholder": "Username"})
     email = StringField(validators=[InputRequired(), Length(min=6, max=120)], render_kw={"placeholder": "Email"})
     password = PasswordField(validators=[InputRequired(), Length(min=8, max=20)], render_kw={"placeholder": "Password"})
+    phone = StringField(validators=[InputRequired(), Length(min=8, max=20)], render_kw={"placeholder": "Enter a mobile number"})
     submit = SubmitField('Register')
 
     def validate_username(self, username):
@@ -54,7 +57,7 @@ class RegisterForm(FlaskForm):
 
 
 class LoginForm(FlaskForm):
-    username = StringField(validators=[InputRequired(), Length(min=4, max=30)], render_kw={"placeholder": "Username"})
+    email = StringField(validators=[InputRequired(), Length(min=4, max=30)], render_kw={"placeholder": "email"})
     password = PasswordField(validators=[InputRequired(), Length(min=8, max=20)], render_kw={"placeholder": "Password"})
     submit = SubmitField('Login')
 
@@ -68,7 +71,7 @@ def home():
 def login():
     form = LoginForm()
     if form.validate_on_submit():
-        user = User.query.filter_by(username=form.username.data).first()
+        user = User.query.filter_by(email=form.email.data).first()
         if user and bcrypt.check_password_hash(user.password, form.password.data):
             login_user(user)
             flash("Login successful!", "success")
@@ -85,23 +88,26 @@ def dashboard():
 
 # Register route
 @app.route('/register', methods=['GET', 'POST'])
-@app.route('/register', methods=['GET', 'POST'])
 def register():
     form = RegisterForm()
+    course = request.args.get('course', 'general')  # Default to 'general' if not provided
+
     if form.validate_on_submit():
+        selected_course = request.form.get("course")  # ← gets the hidden input
         hashed_password = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
         new_user = User(
             username=form.username.data,
             email=form.email.data,
-            password=hashed_password
+            phone=form.phone.data,
+            course = selected_course,
+            password = hashed_password
         )
         db.session.add(new_user)
         db.session.commit()
-        flash("Account created successfully!", "success")
+        flash(f"Account created successfully for {selected_course.replace('-', ' ').title()}!", "success")
         return redirect(url_for('login'))
-    return render_template('register.html', form=form)
 
-
+    return render_template('register.html', form=form, course=course)
 # Logout route
 @app.route('/logout')
 @login_required

@@ -10,7 +10,7 @@
 
     <style>
         body{
-        background: url("/static/blue_bg.jpg") no-repeat center center fixed;
+        background: url("/static/blue_bg.jpg") no-repeat center fixed;
         background-size:cover;
         }
 
@@ -97,7 +97,7 @@
             <div class="card p-4 shadow" >
                 <p class="mt-3"><strong>Get access to the Nexapoint IT support Program .</strong></p>
                 <p>You’ll get access to 100+ hrs of courses , 10+ hrs of hands on lab, and 1-1 with out engineers.</p>
-                <a href="#" class="btn btn-primary w-100">Register Now</a>
+                <a class="btn btn-primary w-100" href="{{ url_for('register',course='IT support') }}">Register Now</a>
                 <p class="text-center mt-2">Already Registered? <a href="#">Log in</a></p>
             </div>
         </div>
@@ -135,8 +135,8 @@
             <div class="card p-4 shadow">
                 <p class="mt-3"><strong>Get access to Nexapoint Data analytics Program.</strong></p>
                 <p>You’ll get access to 100+ hrs of courses , 10+ hrs of hands on lab, and 1-1 with out engineers..</p>
-                <a href="#" class="btn btn-primary w-100">Register Now</a>
-                <p class="text-center mt-2">Already Registered? <a href="#">Log in</a></p>
+                <a href="{{ url_for('register',course='Data analysis') }}" class="btn btn-primary w-100">Register Now</a>
+                <p class="text-center mt-2">Already Registered? <a href="{{ url_for('login') }}">Log in</a></p>
             </div>
         </div>
     </div>
@@ -172,8 +172,8 @@
             <div class="card p-4 shadow">
                 <p class="mt-3"><strong>Get access to all NexaPoints courses.</strong></p>
                 <p>You’ll get access to 100+ hrs of courses , 10+ hrs of hands on lab, and 1-1 with out engineers.</p>
-                <a href="#" class="btn btn-primary w-100">Register Now</a>
-                <p class="text-center mt-2">Already Registered? <a href="#">Log in</a></p>
+                <a href="{{ url_for('register',course='Graphics Design') }}" class="btn btn-primary w-100" >Register Now</a>
+                <p class="text-center mt-2">Already Registered? <a href="{{ url_for('login') }}">Log in</a></p>
             </div>
         </div>
     </div>
@@ -216,8 +216,8 @@
             <div class="card p-4 shadow">
                 <p class="mt-3"><strong>Get access to all Nexapoints courses.</strong></p>
                 <p>You’ll get access to 100+ hrs of courses , 10+ hrs of hands on lab, and 1-1 with out engineers.</p>
-                <a href="#" class="btn btn-primary w-100">Register Now</a>
-                <p class="text-center mt-2">Already Registered? <a href="#">Log in</a></p>
+                <a href="{{ url_for('register',course='Project Management and Business Analysis') }}" class="btn btn-primary w-100">Register Now</a>
+                <p class="text-center mt-2">Already Registered? <a href="{{ url_for('login') }}">Log in</a></p>
             </div>
         </div>
     </div>
@@ -239,11 +239,16 @@
                     <h4>Contact us</h4>
                     <p>info@nexapoint.com <br> +44 (0)7459 158430</p>
                 </div>
-                <div class="col-md-3">
-                    <h4>follow us</h4>
-                     <img src="{{ url_for('static', filename='facebook.png') }}">
-                       <img src="{{ url_for('static', filename='instagram.png') }}">
-                </div>
+              <div class="col-md-3">
+             <h4>Follow us</h4>
+                <a href="https://www.instagram.com/nexa_point/" target="_blank" rel="noopener noreferrer" style="margin-right:10px;">
+                    <img src="{{ url_for('static', filename='instagram.png') }}" alt="Instagram" style="width:30px; height:30px;">
+                </a>
+                <a href="https://www.facebook.com/share/1DhQJVFYhk/" target="_blank" rel="noopener noreferrer">
+                    <img src="{{ url_for('static', filename='facebook.png') }}" alt="Facebook" style="width:30px; height:30px;">
+                </a>
+            </div>
+
             </div>
         </div>
     </div>
