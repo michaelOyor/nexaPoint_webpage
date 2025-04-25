@@ -38,6 +38,19 @@
        margin-top:50px;
        padding-top:30px;
        }
+
+    .service-card {
+    transition: all 0.3s ease;
+    background-color: #2c2f34;
+    border-radius: 10px;
+  }
+
+  .service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+    background-color: #383c42;
+  }
+
     </style>
 </head>
 <body class="bg-light">
@@ -76,16 +89,22 @@
 
                 <div class="d-flex align-items-center">
                     <img src="{{ url_for('static', filename='michael.jpg') }}" class="rounded-circle me-2" style="width: 40px; height: 40px; object-fit:cover;">
-                    <p class="mb-0 text-black" ><strong>Michael Oyor</strong><br>Technical Director, NexaPoint</p>
+                    <p class="mb-0 text-black" ><strong>Michael Oyor</strong><br>Technical Director, Nexapoint</p>
                 </div>
 
             </div>
-                 <div class="col-md-6">
+                 <div class="col-md-12">
             <ul class="list-unstyled text-dark">
-                <li><i class="text-success bi bi-check-circle-fill"></i> Introduction to shell scripting for automation</li>
-                <li><i class="text-success bi bi-check-circle-fill"></i> Understanding shell types and features</li>
-                <li><i class="text-success bi bi-check-circle-fill"></i> Familiarization with basic shell commands and operators</li>
-                <li><i class="text-success bi bi-check-circle-fill"></i> Control structures, loops, and conditionals in shell scripts</li>
+                <li><i class="text-success bi bi-check-circle-fill"></i> <strong>Operating Systems: Windows and MAC </strong>Active Directory & Group Policy </br> macOS and Linux (basic command line & troubleshooting) </li>
+                <li><i class="text-success bi bi-check-circle-fill"></i> <strong>Networking</strong> Basic understanding of IP addressing, DNS, DHCP
+                    Troubleshooting routers, switches, Wi-Fi, and VPNs
+                    Knowing how to ping, trace route, use ipconfig/ifconfig, etc. </li>
+                <li><i class="text-success bi bi-check-circle-fill"></i> <strong> Software & Applications </strong> Microsoft 365 Suite (Word, Excel, Outlook, Teams)
+                    Troubleshooting email clients, browser issues, and common SaaS tools
+                    Familiarity with ticketing systems (e.g. JIRA, ServiceNow, Zendesk) </li>
+                <li><i class="text-success bi bi-check-circle-fill"></i> <strong> Remote Support Tools (RMM) : </strong>Datto, kayesa,  AnyDesk, TeamViewer, RDP, Zoom, etc</li>
+                <li><i class="text-success bi bi-check-circle-fill"></i> <strong> Cybersecurity Basics: </strong>Spotting phishing attempts, enforcing strong password policies Antivirus and endpoint protection software</li>
+                <li><i class="text-success bi bi-check-circle-fill"></i> <strong> Scripting: </strong> PowerShell, Bash, or Python for automation </li>
             </ul>
                 </div>
 
@@ -118,12 +137,13 @@
                     <p class="mb-0 text-black"><strong>Tosin Morebise</strong><br>Associate Director, Nexapoint</p>
                 </div>
 
-                  <div class="col-md-6">
+                  <div class="col-md-12">
             <ul class="list-unstyled text-dark">
-                <li><i class="text-success bi bi-check-circle-fill"></i> Introduction to shell scripting for automation</li>
-                <li><i class="text-success bi bi-check-circle-fill"></i> Understanding shell types and features</li>
-                <li><i class="text-success bi bi-check-circle-fill"></i> Familiarization with basic shell commands and operators</li>
-                <li><i class="text-success bi bi-check-circle-fill"></i> Control structures, loops, and conditionals in shell scripts</li>
+                <li><i class="text-success bi bi-check-circle-fill"></i> <strong> Data Analysis with Microsoft Excel, Power BI, and SQL:</strong> Learn how to use these powerful tools to collect, clean, analyze, and visualize data. </li>
+                <li><i class="text-success bi bi-check-circle-fill"></i> <strong> Database Management with SQL:</strong> Develop a strong understanding of database concepts and learn how to use SQL to manage and query data.
+ </li>
+                <li><i class="text-success bi bi-check-circle-fill"></i> <strong>Data Presentation with PowerPoint:</strong> Effectively communicate your data findings using compelling presentations.</li>
+
             </ul>
                 </div>
 
@@ -155,12 +175,12 @@
                     <p class="mb-0 text-black"><strong>Simeon sodeinde</strong><br>Media Director, Nexapoint</p>
                 </div>
 
-                  <div class="col-md-6">
+                  <div class="col-md-12">
             <ul class="list-unstyled text-dark">
-                <li><i class="text-success bi bi-check-circle-fill"></i> Introduction to shell scripting for automation</li>
-                <li><i class="text-success bi bi-check-circle-fill"></i> Understanding shell types and features</li>
-                <li><i class="text-success bi bi-check-circle-fill"></i> Familiarization with basic shell commands and operators</li>
-                <li><i class="text-success bi bi-check-circle-fill"></i> Control structures, loops, and conditionals in shell scripts</li>
+                <li><i class="text-success bi bi-check-circle-fill"></i> <strong>Principles of Design</strong> Introduction to visual design principles and creative layout techniques</li>
+                <li><i class="text-success bi bi-check-circle-fill"></i> <strong>Creativity and Design</strong> Hands-on experience with industry tools like Adobe Photoshop, Illustrator, and Premiere Pro. And others like CorelDRAW, Canva and Capcut</li>
+                <li><i class="text-success bi bi-check-circle-fill"></i> <strong> Familiarization with editing workflows, timelines, and post-production techniques</strong></li>
+                <li><i class="text-success bi bi-check-circle-fill"></i> <strong>Branding : </strong>Development of branding, and promotional content for various media platforms</li>
             </ul>
                 </div>
 
@@ -170,7 +190,7 @@
         <!-- Right Section: Subscription -->
         <div class="col-md-4">
             <div class="card p-4 shadow">
-                <p class="mt-3"><strong>Get access to all NexaPoints courses.</strong></p>
+                <p class="mt-3"><strong>Get access to all Nexapoints courses.</strong></p>
                 <p>You’ll get access to 100+ hrs of courses , 10+ hrs of hands on lab, and 1-1 with out engineers.</p>
                 <a href="{{ url_for('register',course='Graphics Design') }}" class="btn btn-primary w-100" >Register Now</a>
                 <p class="text-center mt-2">Already Registered? <a href="{{ url_for('login') }}">Log in</a></p>
@@ -199,12 +219,12 @@
                     <p class="mb-0 text-black" ><strong>Lydia Mbagwu</strong><br>Tutor, Nexapoint</p>
                 </div>
 
-                  <div class="col-md-6">
+                  <div class="col-md-12">
             <ul class="list-unstyled text-dark">
-                <li><i class="text-success bi bi-check-circle-fill"></i> Introduction to shell scripting for automation</li>
-                <li><i class="text-success bi bi-check-circle-fill"></i> Understanding shell types and features</li>
-                <li><i class="text-success bi bi-check-circle-fill"></i> Familiarization with basic shell commands and operators</li>
-                <li><i class="text-success bi bi-check-circle-fill"></i> Control structures, loops, and conditionals in shell scripts</li>
+                <li><i class="text-success bi bi-check-circle-fill"></i> Introduction to Project management</li>
+                <li><i class="text-success bi bi-check-circle-fill"></i> Understanding project management methods</li>
+                <li><i class="text-success bi bi-check-circle-fill"></i> Familiarization with Project management terminologies</li>
+                <li><i class="text-success bi bi-check-circle-fill"></i> Mock-ups of real life meetings and procedures</li>
             </ul>
                 </div>
 
@@ -222,6 +242,47 @@
         </div>
     </div>
 </div>
+
+
+    <!--Trial -->
+
+    <div class="container my-5">
+  <h3 class="text-center text-white mb-4">Other services</h3>
+  <div class="row text-center text-white">
+
+    <div class="col-md-4 mb-3">
+      <a href="/cv-service" class="text-decoration-none text-white">
+        <div class="p-4 service-card h-100">
+          <h5>Outstanding CV/resume + Reference + Cover letter</h5>
+          <strong>£50</strong>
+          <p class="small">Included in any of our training packages</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="col-md-4 mb-3">
+      <a href="/linkedin-optimisation" class="text-decoration-none text-white">
+        <div class="p-4 service-card h-100">
+          <h5>Optimise your LinkedIn profile</h5>
+          <strong>£50</strong>
+          <p class="small">Included in any of our training packages</p>
+        </div>
+      </a>
+    </div>
+
+    <div class="col-md-4 mb-3">
+      <a href="/interview-prep" class="text-decoration-none text-white">
+        <div class="p-4 service-card h-100">
+          <h5>Interview preparation</h5>
+          <strong>£50</strong>
+          <p class="small">Included in any of our training packages</p>
+        </div>
+      </a>
+    </div>
+
+  </div>
+</div>
+
 <!-- Contact Section -->
     <div id="section4" class="section bg-white text-black">
         <div class="container text-center">
@@ -229,7 +290,6 @@
                 <div class="col-md-3">
                     <h4>&copy;nexapoint Team</h4>
                     <p>Innovating IT solutions, empowering professionals, and securing businesses with expert consultancy and training.</p>
-                    <h7>Developed by <a href="https://www.instagram.com/oyor_michael/" target="_blank" rel="noopener noreferrer">Oyor_michael</a></h7>
                 </div>
                 <div class="col-md-3">
                     <h4>Office address</h4>
@@ -237,7 +297,7 @@
                 </div>
                 <div class="col-md-3">
                     <h4>Contact us</h4>
-                    <p>info@nexapoint.com <br> +44 (0)7459 158430</p>
+                    <p>info@nexapoint.co.uk <br> +44 (0)7459 158430</p>
                 </div>
               <div class="col-md-3">
              <h4>Follow us</h4>

@@ -100,6 +100,36 @@
     }
  }
 
+         .whatsapp-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      align-items: center;
+      background-color: #0b5ed7;
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+      font-size: 16px;
+      padding: 10px 15px;
+      border-radius: 30px;
+      text-decoration: none;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      z-index: 1000;
+      transition: background-color 0.3s ease;
+    }
+
+    .whatsapp-button:hover {
+      background-color: #0846a5;
+    }
+
+    .whatsapp-button img {
+      height: 24px;
+      margin-right: 10px;
+    }
+
+
+
+
 
     </style>
 </head>
@@ -120,9 +150,6 @@
                         <a class="nav-link" href="#landing">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#section1">About</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="#section2">Services</a>
                     </li>
 
@@ -131,6 +158,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url_for('login') }}">Login</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('login') }}">Careers</a>
                     </li>
                 </ul>
             </div>
@@ -155,7 +185,7 @@
                         Our expertise spans across multiple domains including web development, cloud services, and IT consulting.</p>
                 </div>
                 <div class="col-md-6">
-                    <img src="{{ url_for('static', filename='LargeRes.png') }}" alt="About NexaPoint" style="padding-left:100px; height:120px; width:auto" class="img-fluid">
+                    <img src="{{ url_for('static', filename='LargeRes.png') }}" alt="About NexaPoint" style="padding-left:100px; height:100px; width:auto" class="img-fluid">
                 </div>
             </div>
         </div>
@@ -185,7 +215,7 @@
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title">Web Development</h5>
                             <p class="card-text">Web development and portfolio creation</p>
-                            <a href="#" class="btn btn-primary mt-auto w-100">Talk to an Expert</a>
+                            <a href="https://wa.me/+447459158430" class="btn btn-primary mt-auto w-100">Talk to an Expert</a>
                         </div>
                     </div>
                 </div>
@@ -196,7 +226,7 @@
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title">Cloud Solutions</h5>
                             <p class="card-text">Creating and managing Infrastructure Platform for best performance</p>
-                            <a href="#" class="btn btn-primary mt-auto w-100">See Plans & Pricing</a>
+                            <a href="https://wa.me/+447459158430" class="btn btn-primary mt-auto w-100">See Plans & Pricing</a>
                         </div>
                     </div>
                 </div>
@@ -208,7 +238,7 @@
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title">IT Consulting</h5>
                             <p class="card-text">One stop solution Managed service provider. Our services span across cyber security and infrastructure</p>
-                            <a href="#" class="btn btn-primary mt-auto w-100">Book a Free Call</a>
+                            <a href="https://wa.me/+447459158430" class="btn btn-primary mt-auto w-100">Book a Free Call</a>
                         </div>
                     </div>
                 </div>
@@ -217,31 +247,7 @@
         </div>
     </div>
 
-    <!-- Other services Section -->
-    <div id="section3" class="section bg-dark text-white">
-        <div class="container text-center">
-            <h3 style="margin-bottom: 40px">Other services</h3>
-            <div class="row">
-                <div class="col-md-4">
-                    <h5>Outstanding CV/resume + Cover letter</h5>
-                    <h6>&pound;50</h6>
-                    <p>Included in any of our training packages</p>
-                </div>
-                <div class="col-md-4">
-                    <h5>Optimise your Linkedin profile</h5>
-                    <H6>&pound;50</H6>
-                    <p>Included in any of our training packages</p>
-                </div>
-                <div class="col-md-4">
-                    <h5>Interview preparation</h5>
-                    <h6>&pound;50</h6>
-                    <p>Included in any of our training packages</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="container my-5">
+        <div class="container my-5">
   <h2 class="text-center mb-4">What Our Clients Say</h2>
 
   <div class="row g-4">
@@ -251,7 +257,7 @@
         <div class="card-body">
           <!-- Person's Image and Name -->
           <div class="d-flex align-items-center mb-3">
-            <img src="https://via.placeholder.com/60x60"
+            <img src="{{ url_for('static', filename='user3.jpg') }}"
                  alt="Person's photo"
                  class="rounded-circle me-3"
                  style="width: 60px; height: 60px; object-fit: cover;" />
@@ -285,12 +291,12 @@
       <div class="card h-100 shadow-sm bg-dark">
         <div class="card-body">
           <div class="d-flex align-items-center mb-3">
-            <img src="https://via.placeholder.com/60x60"
+            <img src="{{ url_for('static', filename='user1.jpg') }}"
                  alt="Person's photo"
                  class="rounded-circle me-3"
                  style="width: 60px; height: 60px; object-fit: cover;" />
             <div>
-              <h5 class="mb-0">Sarah Adeyemi</h5>
+              <h5 class="mb-0">John Adeyemi</h5>
               <small class="text-muted">IT Specialist</small>
             </div>
           </div>
@@ -315,7 +321,7 @@
       <div class="card h-100 shadow-sm bg-dark">
         <div class="card-body">
           <div class="d-flex align-items-center mb-3">
-            <img src="https://via.placeholder.com/60x60"
+            <img src="{{ url_for('static', filename='user2.jpg') }}"
                  alt="Person's photo"
                  class="rounded-circle me-3"
                  style="width: 60px; height: 60px; object-fit: cover;" />
@@ -342,12 +348,56 @@
   </div>
 </div>
 
-        <!-- Ads Section -->
-    <div id="advert" class="advert section  text-center">
-        <div class="container">
-            <img src="{{ url_for('static', filename='second.jpg') }}" alt="About NexaPoint" style="height:90vh" class="img-fluid">
+
+
+
+
+<!-- Black background wrapper -->
+<div class="py-5" style="background-color: #1c2841;">
+  <div class="container">
+    <div class="bg-white p-5 rounded shadow" style="max-width: 700px; margin: auto;">
+      <h3 class="fw-bold mb-3">Send Us a Message</h3>
+      <p class="text-muted">Please fill in the form below to get in touch with us.</p>
+
+      <form method="POST" action="/">
+          <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <input type="text" name="first_name" class="form-control" placeholder="First name" required>
+          </div>
+          <div class="col-md-6">
+            <input type="text" name="last_name" class="form-control" placeholder="Last name" required>
+          </div>
+          <div class="col-md-6">
+            <input type="email" name="email" class="form-control" placeholder="Email address" required>
+          </div>
+          <div class="col-md-6">
+            <input type="tel" name="phone" class="form-control" placeholder="Phone Number">
+          </div>
+          <div class="col-12">
+            <textarea name="message" class="form-control" rows="4" placeholder="Message" required></textarea>
+          </div>
+          <div class="col-12">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="termsCheck" required>
+              <label class="form-check-label" for="termsCheck">
+                I've read and agree with <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+              </label>
+            </div>
+          </div>
+          <div class="col-12">
+            <button type="submit" class="btn btn-dark w-100">Submit</button>
+          </div>
         </div>
+      </form>
     </div>
+  </div>
+</div>
+ -->
+
+
+
+
 
      <!-- Contact Section -->
     <div id="section4" class="section bg-white text-black">
@@ -356,7 +406,6 @@
                 <div class="col-md-3">
                     <h4>&copy;nexapoint Team</h4>
                     <p>Innovating IT solutions, empowering professionals, and securing businesses with expert consultancy and training.</p>
-                    <h7>Developed by <a href="https://www.instagram.com/oyor_michael/" target="_blank" rel="noopener noreferrer">Oyor_michael</a></h7>
                 </div>
                 <div class="col-md-3">
                     <h4>Office address</h4>
@@ -364,7 +413,7 @@
                 </div>
                 <div class="col-md-3">
                     <h4>Contact us</h4>
-                    <p>info@nexapoint.com <br> +44 (0)7459 158430</p>
+                    <p>info@nexapoint.co.uk <br> +44 (0)7459 158430</p>
                 </div>
                 <div class="col-md-3">
              <h4>Follow us</h4>
@@ -378,6 +427,13 @@
             </div>
         </div>
     </div>
+
+
+    <a href="https://wa.me/+447459158430" class="whatsapp-button" target="_blank">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+  Send us a message
+    </a>
+
     <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
