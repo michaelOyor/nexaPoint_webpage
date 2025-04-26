@@ -142,44 +142,6 @@ def delete_user(user_id):
     return redirect(url_for('users'))
 
 
-# Route for contact form
-@app.route("/", methods=["GET", "POST"])
-def contact():
-    if request.method == "POST":
-        first = request.form.get("first_name")
-        last = request.form.get("last_name")
-        email = request.form.get("email")
-        phone = request.form.get("phone")
-        message = request.form.get("message")
-
-        # Compose email
-        msg = EmailMessage()
-        msg["Subject"] = "New Contact Form Submission"
-        msg["From"] = email
-        msg["To"] = "info@nexapoint.co.uk"  # your Zoho inbox
-
-        msg.set_content(f"""
-        Name: {first} {last}
-        Email: {email}
-        Phone: {phone}
-
-        Message:
-        {message}
-        """)
-
-        try:
-            # Connect to Zoho's SMTP
-            with smtplib.SMTP_SSL("smtp.zoho.eu", 465) as smtp:
-                smtp.login("info@nexapoint.co.uk", os.environ.get("NexapointAdmin@01"))
-                smtp.send_message(msg)
-            flash("Your message has been sent successfully!", "success")
-        except Exception as e:
-            print("Error sending email:", e)
-            flash("There was an error sending your message. Please try again later.", "danger")
-
-        return redirect("/")
-
-    return render_template("form.html")
 
 
 if __name__ == "__main__":
