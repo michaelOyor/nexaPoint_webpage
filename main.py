@@ -170,7 +170,7 @@ def contact():
         try:
             # Connect to Zoho's SMTP
             with smtplib.SMTP_SSL("smtp.zoho.eu", 465) as smtp:
-                smtp.login("info@nexapoint.co.uk", os.environ.get("ZOHO_APP_PASSWORD"))
+                smtp.login("info@nexapoint.co.uk", os.environ.get("NexapointAdmin@01"))
                 smtp.send_message(msg)
             flash("Your message has been sent successfully!", "success")
         except Exception as e:
