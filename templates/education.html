@@ -51,6 +51,61 @@
     background-color: #383c42;
   }
 
+        .popup-box {
+    position: absolute;
+    top: 105%;
+    left: 15px;
+    background-color: #222;
+    padding: 12px 16px;
+    border-radius: 8px;
+    max-width: 280px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    z-index: 1000;
+  }
+
+  .popup-box::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 20px;
+    border-width: 0 8px 8px 8px;
+    border-style: solid;
+    border-color: transparent transparent #222 transparent;
+  }
+
+  .cursor-pointer {
+    cursor: pointer;
+  }
+
+        .whatsapp-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      align-items: center;
+      background-color: #0b5ed7;
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+      font-size: 16px;
+      padding: 10px 15px;
+      border-radius: 30px;
+      text-decoration: none;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      z-index: 1000;
+      transition: background-color 0.3s ease;
+    }
+
+    .whatsapp-button:hover {
+      background-color: #0846a5;
+    }
+
+    .whatsapp-button img {
+      height: 24px;
+      margin-right: 10px;
+    }
+
+
+
     </style>
 </head>
 <body class="bg-light">
@@ -61,8 +116,8 @@
                 <a class="navbar-brand" href="/">
                 <img src="{{ url_for('static', filename='LargeRes.png') }}" alt="NexaPoint Logo" style="height:30px; width:auto;" class="d-inline-block align-top">
             </a>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
+            <div class="collapse navbar-collapse " id="navbarNav">
+                <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="/">Home</a>
                     </li>
@@ -250,35 +305,46 @@
   <h3 class="text-center text-white mb-4">Other services</h3>
   <div class="row text-center text-white">
 
-    <div class="col-md-4 mb-3">
-      <a href="/cv-service" class="text-decoration-none text-white">
-        <div class="p-4 service-card h-100">
-          <h5>Outstanding CV/resume + Reference + Cover letter</h5>
-          <strong>£50</strong>
-          <p class="small">Included in any of our training packages</p>
-        </div>
-      </a>
-    </div>
+   <div class="col-md-4 mb-3 position-relative">
+  <div class="p-4 service-card h-100 text-white text-decoration-none cursor-pointer" onclick="togglePopup(this)">
+    <h5>Outstanding CV/resume + Reference + Cover letter</h5>
+    <strong>£50</strong>
+    <p class="small">Included in any of our training packages</p>
+  </div>
+  <div class="popup-box text-white" style="display: none;">
+    We help you craft a professional CV, cover letter, and provide references – all tailored to your goals.<br> <br>PS: you can connect
+      to us by clicking the whatsapp icon and leaving a message indicating your interest. All other details would be communicated.
+  </div>
+</div>
 
-    <div class="col-md-4 mb-3">
-      <a href="/linkedin-optimisation" class="text-decoration-none text-white">
-        <div class="p-4 service-card h-100">
-          <h5>Optimise your LinkedIn profile</h5>
-          <strong>£50</strong>
-          <p class="small">Included in any of our training packages</p>
-        </div>
-      </a>
-    </div>
 
-    <div class="col-md-4 mb-3">
-      <a href="/interview-prep" class="text-decoration-none text-white">
-        <div class="p-4 service-card h-100">
-          <h5>Interview preparation</h5>
-          <strong>£50</strong>
-          <p class="small">Included in any of our training packages</p>
-        </div>
-      </a>
-    </div>
+<!-- LinkedIn Optimisation Card -->
+<div class="col-md-4 mb-3 position-relative">
+  <div class="p-4 service-card h-100 text-white text-decoration-none cursor-pointer" onclick="togglePopup(this)">
+    <h5>Optimise your LinkedIn profile</h5>
+    <strong>£50</strong>
+    <p class="small">Included in any of our training packages</p>
+  </div>
+  <div class="popup-box text-white" style="display: none;">
+    Stand out to recruiters with a fully optimised LinkedIn profile that highlights your strengths and career goals.<br> <br>PS: you can connect
+      to us by clicking the whatsapp icon and leaving a message indicating your interest. All other details would be communicated.
+  </div>
+</div>
+
+<!-- Interview Prep Card -->
+<div class="col-md-4 mb-3 position-relative">
+  <div class="p-4 service-card h-100 text-white text-decoration-none cursor-pointer" onclick="togglePopup(this)">
+    <h5>Interview preparation</h5>
+    <strong>£50</strong>
+    <p class="small">Included in any of our training packages</p>
+  </div>
+  <div class="popup-box text-white" style="display: none;">
+    Get expert coaching to confidently handle real interview questions, with practical feedback and support.<br> <br>PS: you can connect
+      to us by clicking the whatsapp icon and leaving a message indicating your interest. All other details would be communicated.
+  </div>
+</div>
+
+
 
   </div>
 </div>
@@ -314,6 +380,35 @@
     </div>
 
 
+     <a href="https://wa.me/+447459158430" class="whatsapp-button" target="_blank">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+  Send us a message
+    </a>
+
+
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  function togglePopup(card) {
+    const popup = card.nextElementSibling;
+    const isVisible = popup.style.display === "block";
+
+    // Close any other open popups
+    document.querySelectorAll('.popup-box').forEach(el => el.style.display = 'none');
+
+    // Toggle this popup
+    popup.style.display = isVisible ? 'none' : 'block';
+  }
+
+  // Optional: close popup when clicking outside
+  document.addEventListener("click", function (e) {
+    const serviceCard = e.target.closest(".service-card");
+    const popupBox = e.target.closest(".popup-box");
+    if (!serviceCard && !popupBox) {
+      document.querySelectorAll('.popup-box').forEach(el => el.style.display = 'none');
+    }
+  });
+</script>
+
 </body>
 </html>
